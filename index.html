@@ -551,6 +551,54 @@
     @media (max-width: 700px) {
         .hero-name { font-size: 2.5em; }
     }
+
+    /* --- Resume / CV Button (Special Style) --- */
+    .resume-btn {
+        background: rgba(139, 92, 246, 0.15); /* Subtle Violet Tint */
+        border: 1px solid var(--accent-border);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 8px;
+        font-size: 0.95em;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        position: relative;
+        overflow: hidden; /* Contains the shine */
+        text-decoration: none;
+    }
+
+    /* The 'Shine' Effect */
+    .resume-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg, 
+            transparent, 
+            rgba(255, 255, 255, 0.2), 
+            transparent
+        );
+        transition: 0.5s;
+    }
+
+    /* Hover State */
+    .resume-btn:hover {
+        box-shadow: 0 0 25px rgba(139, 92, 246, 0.5); /* Strong Glow */
+        transform: translateY(-3px);
+        background: var(--accent-border); /* Solid Violet on hover */
+    }
+
+    .resume-btn:hover::before {
+        left: 100%; /* Triggers the shine sweep */
+    }
   </style>
 </head>
 <body>
@@ -583,7 +631,11 @@
         I enjoy building production-grade systems, from dynamic pricing engines to medical companion apps.
       </p>
       
-      <div class="hero-contact">
+     <div class="hero-contact">
+        <a href="https://drive.google.com/file/d/1W3VF2VHPks957WnJc8QofLUkxBYykVT7/view?usp=drive_link" target="_blank" class="resume-btn">
+            <i class="fas fa-file-pdf"></i> Resume
+        </a>
+
         <a href="mailto:b23cs1059@iitj.ac.in" class="social-btn"><i class="fas fa-envelope"></i> Email</a>
         <a href="https://www.linkedin.com/in/saher-dev-a8191428a/" target="_blank" class="social-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://github.com/saherdev017" target="_blank" class="social-btn"><i class="fab fa-github"></i> GitHub</a>
