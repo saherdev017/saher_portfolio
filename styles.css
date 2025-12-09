@@ -1,0 +1,293 @@
+/* styles.css */
+    :root {
+      --accent: #f4f4f5; 
+      --accent-hover: #ffffff; 
+      --text-main: #e0e0e0;
+      --section-bg: #232323;
+      --background: #18181b;
+      --card-bg: #202024;
+      --border: #35353b;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--background);
+      color: #f4f4f5;
+      font-family: 'Lekton', 'Courier New', monospace; /* Technical font */
+      margin: 0;
+      min-height: 100vh;
+      letter-spacing: 0.02em;
+      padding-top: 60px;
+    }
+
+    /* --- Navigation --- */
+    .navbar {
+      width: 100%;
+      margin-top: 1em;
+      margin-bottom: 3em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 1.5em;
+      background: #232329;
+      padding: 0.8em 2em;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
+    .nav-link {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: #fff;
+    }
+
+    /* --- Main Layout --- */
+    main {
+      max-width: 800px; 
+      margin: 0 auto;
+      padding: 0 1.5em 4em 1.5em;
+    }
+
+    /* --- Typography --- */
+    h1 {
+      font-size: 2.2em;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 0.5em;
+      margin-top: 2em;
+      border-left: 4px solid #fff;
+      padding-left: 15px;
+    }
+    
+    h3 {
+      color: #fff;
+      margin-top: 0;
+      font-weight: 700;
+    }
+
+    p, ul, li {
+      color: #d4d4d8;
+      font-size: 1.05em;
+      line-height: 1.6;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    /* --- Hero Section --- */
+    .hero-section {
+      text-align: left;
+      margin-bottom: 4em;
+      margin-top: 2em;
+    }
+
+    .hero-name {
+      font-size: 3.5em;
+      margin: 0;
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2em;
+      color: #a1a1aa;
+      margin-top: 10px;
+      font-weight: 400;
+    }
+
+    .hero-contact {
+      margin-top: 1.5em;
+      display: flex;
+      gap: 1em;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      background: #232329;
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .social-btn:hover {
+      background: #fff;
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    /* --- Tech Stack (Custom Grid) --- */
+    .tech-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        margin-top: 1.5em;
+    }
+
+    .tech-card {
+        /* Matching the style you requested but adapted for dark mode */
+        background: #202024;
+        border: 1px solid var(--border);
+        padding: 0.6em 1em;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        width: 150px; /* similar to w-40 */
+        cursor: pointer;
+        transition: transform 0.2s, background 0.2s, border-color 0.2s;
+    }
+
+    .tech-card img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .tech-card h4 {
+        font-size: 0.9em;
+        margin: 0 0 0 12px;
+        font-weight: 400;
+        color: #e0e0e0;
+    }
+
+    .tech-card:hover {
+        transform: scale(1.05); /* hover:scale */
+        background: #2a2a30;
+        border-color: #fff;
+    }
+
+    /* --- Projects --- */
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5em;
+      margin-bottom: 2em;
+      transition: all 0.3s cubic-bezier(.4,2,.6,1);
+      position: relative;
+    }
+
+    .project-card:hover {
+      border-color: #fff;
+      box-shadow: 0 8px 32px 0 rgba(255,255,255,0.1);
+      transform: translateY(-4px) scale(1.01);
+    }
+
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.5em;
+    }
+
+    .project-title {
+        font-size: 1.3em;
+        font-weight: 700;
+        color: #fff;
+    }
+    
+    .project-links a {
+        font-size: 0.9em;
+        margin-left: 10px;
+        color: #a1a1aa;
+    }
+    
+    .project-links a:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    .project-tech {
+        font-size: 0.85em;
+        color: #fbbf24; /* Technical accent color */
+        margin-bottom: 1em;
+        font-family: 'Courier New', monospace;
+    }
+
+    .project-desc ul {
+        margin: 0;
+        padding-left: 1.2em;
+    }
+
+    .project-desc li {
+        margin-bottom: 0.4em;
+        font-size: 0.95em;
+    }
+
+    /* --- Experience / Timeline --- */
+    .exp-item {
+        border-left: 2px solid #35353b;
+        padding-left: 20px;
+        margin-bottom: 2em;
+        position: relative;
+    }
+
+    .exp-item::before {
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        background: #fff;
+        border-radius: 50%;
+    }
+
+    .exp-title {
+        color: #fff;
+        font-size: 1.1em;
+        font-weight: 700;
+    }
+
+    .exp-place {
+        color: #a1a1aa;
+        font-size: 0.9em;
+        margin-bottom: 0.5em;
+        display: block;
+    }
+
+    /* --- Animations --- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in.appear {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* --- Mobile --- */
+    @media (max-width: 700px) {
+        .navbar-links {
+            padding: 0.5em 1em;
+            gap: 1em;
+            font-size: 0.8em;
+            width: 90%;
+            justify-content: space-around;
+        }
+        .hero-name { font-size: 2.5em; }
+        .tech-grid { justify-content: center; }
+    }
