@@ -85,6 +85,7 @@
     .nav-link:nth-child(3) { animation-delay: 0.3s; }
     .nav-link:nth-child(4) { animation-delay: 0.4s; }
     .nav-link:nth-child(5) { animation-delay: 0.5s; }
+    .nav-link:nth-child(6) { animation-delay: 0.6s; }
 
     /* The Laser Line (Hidden by default) */
     .nav-link::after {
@@ -379,12 +380,12 @@
     }
 
     /* Mobile Tweaks */
-    @media (max-width: 700px) {
-        .navbar-links { padding: 0.6em 1em; gap: 1em; font-size: 0.8em; }
-        .hero-name { font-size: 2.8em; }
-        .tech-grid { justify-content: center; }
-        .cards-grid { grid-template-columns: 1fr; }
-    }
+   @media (max-width: 700px) {
+    .navbar-links { padding: 0.6em 1em; gap: 1em; font-size: 0.8em; flex-wrap: wrap; justify-content: center; }
+    .hero-name { font-size: 2.8em; }
+    .tech-grid { justify-content: center; }
+    .cards-grid { grid-template-columns: 1fr; }
+}
 
 
     /* --- Role Progression Timeline Styles --- */
@@ -602,16 +603,14 @@
   </style>
 </head>
 <body>
-
-  <nav class="navbar">
-    <div class="navbar-links">
-      <a href="#about" class="nav-link">About</a>
-      <a href="#skills" class="nav-link">Stack</a>
-      <a href="#education" class="nav-link">Education</a>
-      <a href="#projects" class="nav-link">Work</a>
-      <a href="#positions" class="nav-link">POR</a>
-    </div>
-  </nav>
+<div class="navbar-links">
+  <a href="#about" class="nav-link">About</a>
+  <a href="#skills" class="nav-link">Stack</a>
+  <a href="#education" class="nav-link">Education</a>
+  <a href="#experience" class="nav-link">Work Experience</a>
+  <a href="#projects" class="nav-link">Projects</a>
+  <a href="#positions" class="nav-link">POR</a>
+</div>
 
   <main>
     <section id="about" class="hero-section">
@@ -696,6 +695,36 @@
           </div>
       </div>
     </section>
+
+
+    <section id="experience" class="section fade-in">
+  <h1>Work Experience</h1>
+
+  <div class="project-card">
+    <div class="card-header">
+      <div style="display:flex; align-items:center; gap:15px;">
+        <img src="https://www.vectorlogo.zone/logos/oracle/oracle-icon.svg" alt="Oracle" style="width:44px; height:44px; background:#fff; border-radius:10px; padding:6px; flex-shrink:0;">
+        <div>
+          <h2 class="project-title" style="margin-bottom:2px;">Oracle</h2>
+          <span class="project-tech-stack" style="margin-bottom:0;">Project Intern · Bangalore, India</span>
+        </div>
+      </div>
+      <span style="color:var(--highlight); font-size:0.85em; font-family:'Courier New', monospace; white-space:nowrap; padding-top:4px;">May 2026 – Jul 2026</span>
+    </div>
+    <hr class="card-divider">
+    <div class="project-details">
+      <p style="margin-bottom:14px; line-height:1.6;">
+        Engineered a backend integration enabling an open-source, stateful AI agent framework to persist its full runtime state natively on <strong style="color:#fff;">Oracle AI Database</strong> across <strong style="color:#fff;">55 schema tables</strong>, eliminating the need for a secondary vector database and validating the system via <strong style="color:#fff;">131 integration tests</strong>.
+      </p>
+      <ul>
+        <li>Migrated <strong>100% of agent runtime state</strong> (agents, messages, memory, tools, sources, files, JSON, embeddings) to Oracle, consolidating dual-database infrastructure into a single governed system of record.</li>
+        <li>Designed <strong>MERGE + savepoint-backed</strong> batch DML, achieving a <strong>22–104x speedup</strong> in relationship insert throughput.</li>
+        <li>Implemented native <strong>VECTOR(4096)</strong> storage with exact <strong>VECTOR_DISTANCE</strong> retrieval &amp; HNSW indexing, delivering <strong>2.6x faster</strong> vector search on a 10K-vector benchmark corpus.</li>
+        <li>Reduced embedding storage footprint by <strong>99.01%</strong> (32.9MB → 324KB per 1K vectors) via a deduplication fingerprinting mechanism, with zero loss in retrieval accuracy.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
   
 <section id="projects" class="section fade-in">
